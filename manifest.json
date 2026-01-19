@@ -1,7 +1,17 @@
 {
-    "name": "${modName}",
-    "entry": "${modFile}",
-    "version": "${modVersion}",
+    "entry": "iAutomaticFishing.dll",
+    "name": "iAutomaticFishing",
     "type": "native",
-    "platform": "universal"
+    "platform": "universal",
+    "passive": false,
+    "version": "${modVersion}",
+    "author": "MiracleForest",
+    "description": "A Minecraft Autofish mod for the LeviLamina mod loader.",
+    "extraInfo": {
+        "github": "https://github.com/MiracleForest/iAutomaticFishing"
+    },
+    "dependencies": [],
+    "optionalDependencies": [],
+    "conflicts": [],
+    "loadBefore": []
 }

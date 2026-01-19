@@ -8,10 +8,8 @@
 #include <ll/api/memory/Hook.h>
 #include <ll/api/mod/RegisterHelper.h>
 #include <ll/api/service/GamingStatus.h>
-#include <ll/api/thread/ServerThreadExecutor.h>
 #include <mc/client/network/ClientNetworkHandler.h>
 #include <mc/network/packet/ActorEventPacket.h>
-#include <mc/network/packet/InventorySlotPacket.h>
 #include <mc/world/actor/FishingHook.h>
 #include <mc/world/actor/player/Player.h>
 #include <mc/world/gamemode/GameMode.h>
@@ -34,11 +32,8 @@ LL_TYPE_INSTANCE_HOOK(
     auto* player = getPlayerOwner();
     if (!player) return result;
     auto& item   = const_cast<ItemStack&>(player->getSelectedItem());
-    item.getItem()->use(item, *player);
-    if (!item.isNull()) item.getItem()->use(item, *player);
-    ll::thread::ServerThreadExecutor::getDefault().execute([player, &item]() -> void {
-        InventorySlotPacket(ContainerID::Inventory, player->getSelectedItemSlot(), item).sendTo(*player);
-    });
+    player->mGameMode->baseUseItem(item);
+    if (!item.isNull()) player->mGameMode->baseUseItem(item);
     return result;
 }
 
