@@ -78,7 +78,7 @@ bool iAutomaticFishing::load() {
         HandleActorEventPacketHook::unhook();
     }));
     if (ll::service::getMinecraft(false)) FishingHookedHook::hook();
-    if (ll::service::getMinecraft(true)) HandleActorEventPacketHook::hook();
+    else if (ll::service::getMinecraft(true)) HandleActorEventPacketHook::hook();
     return true;
 }
 
