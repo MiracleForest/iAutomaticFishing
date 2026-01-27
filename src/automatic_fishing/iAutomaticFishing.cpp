@@ -1,5 +1,4 @@
 #include "automatic_fishing/iAutomaticFishing.h"
-#include <ll/api/Versions.h>
 #include <ll/api/event/EventBus.h>
 #include <ll/api/event/client/ClientExitLevelEvent.h>
 #include <ll/api/event/client/ClientJoinLevelEvent.h>
@@ -7,6 +6,7 @@
 #include <ll/api/event/server/ServerStoppingEvent.h>
 #include <ll/api/memory/Hook.h>
 #include <ll/api/mod/RegisterHelper.h>
+#include <ll/api/service/Bedrock.h>
 #include <ll/api/service/GamingStatus.h>
 #include <mc/client/network/ClientNetworkHandler.h>
 #include <mc/network/packet/ActorEventPacket.h>
@@ -77,6 +77,8 @@ bool iAutomaticFishing::load() {
     mListeners.insert(eventBus.emplaceListener<ll::event::ClientExitLevelEvent>([](auto&&) {
         HandleActorEventPacketHook::unhook();
     }));
+    if (ll::service::getMinecraft(false)) FishingHookedHook::hook();
+    if (ll::service::getMinecraft(true)) HandleActorEventPacketHook::hook();
     return true;
 }
 
