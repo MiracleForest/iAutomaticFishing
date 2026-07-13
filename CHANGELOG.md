@@ -7,7 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.3.0] - 2026-07-13
+
+### Changed
+
+- Adapted to LeviLamina 26.20.x and BDS 26.20.x @wed150 @zimuya4153
+
 ## [1.2.0] - 2026-07-13
+
+### Changed
 
 - Adapted to LeviLamina 26.10.x and BDS 26.10.x @xianyubb @wed150 @zimuya4153
 
