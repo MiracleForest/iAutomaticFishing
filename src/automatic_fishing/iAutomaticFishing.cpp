@@ -16,7 +16,7 @@
 #include <mc/world/item/Item.h>
 #include <mc/world/level/Level.h>
 
-namespace automatic_fishing {
+namespace mif::automatic_fishing {
 
 using namespace ll::memory_literals;
 
@@ -31,7 +31,7 @@ LL_TYPE_INSTANCE_HOOK(
     if (!result || mTimeUntilHooked) return result;
     auto* player = getPlayerOwner();
     if (!player) return result;
-    auto& item   = const_cast<ItemStack&>(player->getSelectedItem());
+    auto& item = const_cast<ItemStack&>(player->getSelectedItem());
     player->mGameMode->baseUseItem(item);
     if (!item.isNull()) player->mGameMode->baseUseItem(item);
     return result;
@@ -97,6 +97,6 @@ bool iAutomaticFishing::unload() {
     return true;
 }
 
-} // namespace automatic_fishing
+LL_REGISTER_MOD(iAutomaticFishing, iAutomaticFishing::getInstance());
 
-LL_REGISTER_MOD(automatic_fishing::iAutomaticFishing, automatic_fishing::iAutomaticFishing::getInstance());
+} // namespace mif::automatic_fishing

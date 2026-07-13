@@ -2,7 +2,7 @@
 #include <ll/api/event/ListenerBase.h>
 #include <ll/api/mod/NativeMod.h>
 
-namespace automatic_fishing {
+namespace mif::automatic_fishing {
 
 class iAutomaticFishing {
 public:
@@ -26,4 +26,4 @@ private:
     ll::DenseSet<ll::event::ListenerPtr> mListeners;
 };
 
-} // namespace automatic_fishing
+} // namespace mif::automatic_fishing
