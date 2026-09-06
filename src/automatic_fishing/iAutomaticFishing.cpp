@@ -24,17 +24,16 @@ LL_TYPE_INSTANCE_HOOK(
     iAutomaticFishing::FishingHookedHook,
     HookPriority::Normal,
     FishingHook,
-    &FishingHook::_serverHooked,
-    bool
+    &FishingHook::postNormalTick,
+    void
 ) {
-    auto result = origin();
-    if (!result || mTimeUntilHooked) return result;
+    origin();
+    if (mTimeUntilNibble <= 0) return;
     auto* player = getPlayerOwner();
-    if (!player) return result;
+    if (!player) return;
     auto& item = const_cast<ItemStack&>(player->getSelectedItem());
     player->mGameMode->baseUseItem(item);
     if (!item.isNull()) player->mGameMode->baseUseItem(item);
-    return result;
 }
 
 LL_TYPE_INSTANCE_HOOK(
@@ -48,13 +47,13 @@ LL_TYPE_INSTANCE_HOOK(
     ActorEventPacket const&  packet
 ) {
     if (packet.mEventId != ActorEvent::FishhookHooktime) return origin(source, packet);
-    auto* entity = mLevel->mPointer->getRuntimeEntity(packet.mRuntimeId, false);
-    if (!entity) return origin(source, packet);
-    auto* player = entity->getPlayerOwner();
-    if (!player) return origin(source, packet);
-    auto& item = const_cast<ItemStack&>(player->getSelectedItem());
-    player->mGameMode->baseUseItem(item);
-    if (!item.isNull()) player->mGameMode->baseUseItem(item);
+    optional_ref{mLevel->mPointer->getRuntimeEntity(packet.mRuntimeId, false)}
+        .transform(&Actor::getPlayerOwner)
+        .and_then([](Player& player) {
+            auto& item = const_cast<ItemStack&>(player.getSelectedItem());
+            player.mGameMode->baseUseItem(item);
+            if (!item.isNull()) player.mGameMode->baseUseItem(item);
+        });
     origin(source, packet);
 }
 

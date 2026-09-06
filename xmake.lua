@@ -4,7 +4,7 @@ add_rules("plugin.compile_commands.autoupdate")
 
 add_repositories("levimc-repo https://github.com/LiteLDev/xmake-repo.git")
 
-add_requires("levilamina 26.20.0", { configs = { target_type = "client" } })
+add_requires("levilamina 26.32.0", { configs = { target_type = "client" } })
 add_requires("levibuildscript 0.6.1")
 
 if not has_config("vs_runtime") then
@@ -15,7 +15,6 @@ target("iAutomaticFishing")
     add_rules("@levibuildscript/linkrule")
     add_rules("@levibuildscript/modpacker")
     add_cxflags(
-        "/EHa",
         "/utf-8",
         "/W4",
         "/w44265",
@@ -41,8 +40,7 @@ target("iAutomaticFishing")
     add_defines(
         "NOMINMAX",
         "UNICODE",
-        "_HAS_CXX23=1",
-        "LL_PLAT_C"
+        "_HAS_CXX23=1"
     )
     add_packages(
         "levilamina"

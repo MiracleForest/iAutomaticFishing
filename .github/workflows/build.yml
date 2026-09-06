@@ -23,6 +23,10 @@ jobs:
           restore-keys: |
             xmake-
 
+      - uses: ZhongRuoyu/setup-llvm@v0
+        with:
+          llvm-version: 22
+
       - run: |
           xmake repo -u
 
