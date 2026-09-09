@@ -7,29 +7,33 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.5.0] - 2026-09-09
+
+- Adapted to LeviLamina 26.40.x @zimuya4153
+
 ## [1.4.0] - 2026-09-06
 
 ### Changed
 
-- Adapted to LeviLamina 26.32.x and BDS 26.32.2 @zimuya4153
+- Adapted to LeviLamina 26.32.x @zimuya4153
 
 ## [1.3.0] - 2026-07-13
 
 ### Changed
 
-- Adapted to LeviLamina 26.20.x and BDS 26.20.4 @wed150 @zimuya4153
+- Adapted to LeviLamina 26.20.x @wed150 @zimuya4153
 
 ## [1.2.0] - 2026-07-13
 
 ### Changed
 
-- Adapted to LeviLamina 26.10.x and BDS 26.10.x @xianyubb @wed150 @zimuya4153
+- Adapted to LeviLamina 26.10.x @xianyubb @wed150 @zimuya4153
 
 ## [1.1.0] - 2026-01-27
 
 ### Changed
 
-- Apated to LeviLamina 1.9.x and BDS 1.21.132.01 @zimuya4153
+- Apated to LeviLamina 1.9.x @zimuya4153
 
   #### Fixed
 - Fixed hot-loading not working @zimuya4153
@@ -40,7 +44,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Initial release @zimuya4153
 
-[Unreleased]: https://github.com/MiracleForest/iAutomaticFishing/compare/v1.4.0...HEAD
+[Unreleased]: https://github.com/MiracleForest/iAutomaticFishing/compare/v1.5.0...HEAD
+[1.5.0]: https://github.com/MiracleForest/iAutomaticFishing/compare/v1.4.0...v1.5.0
 [1.4.0]: https://github.com/MiracleForest/iAutomaticFishing/compare/v1.3.0...v1.4.0
 [1.3.0]: https://github.com/MiracleForest/iAutomaticFishing/compare/v1.2.0...v1.3.0
 [1.2.0]: https://github.com/MiracleForest/iAutomaticFishing/compare/v1.1.0...v1.2.0
