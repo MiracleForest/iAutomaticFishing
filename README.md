@@ -19,7 +19,7 @@ Very simple to use. Just cast the fishing rod into the water once, and it will a
 
 #### Using Lip (Recommended)
 
-1. Navigate to your Minecraft version directory (e.g., `versions/1.21.124.02/`)
+1. Navigate to your Minecraft version directory (e.g., `versions/<your-version>/`)
 2. Execute the following command:
     ```bash
     lip install github.com/MiracleForest/iAutomaticFishing#client

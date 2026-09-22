@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.6.0] - 2026-02-22
+
+- Adapted to LeviLamina 26.51.x @zimuya4153
+
 ## [1.5.0] - 2026-09-09
 
 - Adapted to LeviLamina 26.40.x @zimuya4153
@@ -44,7 +48,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Initial release @zimuya4153
 
-[Unreleased]: https://github.com/MiracleForest/iAutomaticFishing/compare/v1.5.0...HEAD
+[Unreleased]: https://github.com/MiracleForest/iAutomaticFishing/compare/v1.6.0...HEAD
+[1.6.0]: https://github.com/MiracleForest/iAutomaticFishing/compare/v1.5.0...v1.6.0
 [1.5.0]: https://github.com/MiracleForest/iAutomaticFishing/compare/v1.4.0...v1.5.0
 [1.4.0]: https://github.com/MiracleForest/iAutomaticFishing/compare/v1.3.0...v1.4.0
 [1.3.0]: https://github.com/MiracleForest/iAutomaticFishing/compare/v1.2.0...v1.3.0

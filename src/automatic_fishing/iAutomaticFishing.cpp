@@ -32,8 +32,8 @@ LL_TYPE_INSTANCE_HOOK(
     auto* player = getPlayerOwner();
     if (!player) return;
     auto& item = const_cast<ItemStack&>(player->getSelectedItem());
-    player->mGameMode->baseUseItem(item);
-    if (!item.isNull()) player->mGameMode->baseUseItem(item);
+    player->mGameMode->baseUseItem(item, HandSlot::Mainhand);
+    if (!item.isNull()) player->mGameMode->baseUseItem(item, HandSlot::Mainhand);
 }
 
 LL_TYPE_INSTANCE_HOOK(
@@ -51,8 +51,8 @@ LL_TYPE_INSTANCE_HOOK(
         .transform(&Actor::getPlayerOwner)
         .and_then([](Player& player) {
             auto& item = const_cast<ItemStack&>(player.getSelectedItem());
-            player.mGameMode->baseUseItem(item);
-            if (!item.isNull()) player.mGameMode->baseUseItem(item);
+            player.mGameMode->baseUseItem(item, HandSlot::Mainhand);
+            if (!item.isNull()) player.mGameMode->baseUseItem(item, HandSlot::Mainhand);
         });
     origin(source, packet);
 }
